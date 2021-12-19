@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native';
 import { useState } from 'react';
 
 export default function App() {
@@ -15,8 +15,10 @@ export default function App() {
         </View>
       </View>
       <View>
-        {goals.map((goal, index) => <Text key={index}>{goal}</Text>)}
-      </View>
+        <ScrollView>
+          { goals.map((goal, index) => <Text style={ { borderColor: 'black', borderWidth: 1, padding: 5, marginBottom: 3 } } key={index}>{goal} </Text>) }
+          </ScrollView>
+        </View>
     </View>
   );
 }
