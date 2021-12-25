@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { StyleSheet, View, FlatList, Text } from 'react-native';
 
 const GoalList = (props) => {
   return (
@@ -9,12 +9,21 @@ const GoalList = (props) => {
         keyExtractor={ item => item.key }
         renderItem={(listItem) => (
           <View >
-            <Text style={ { borderColor: 'black', borderWidth: 1, padding: 5, marginBottom: 3 } } onPress={() => props.deleteItem(listItem.item.key) } > { listItem.item.data } </Text>
+            <Text style={ style.text_output } onPress={() => props.deleteItem(listItem.item.key) } > { listItem.item.data } </Text>
           </View>
         )}
       />
     </View>
   );
 }
+
+const style = StyleSheet.create({
+  text_output: {
+    borderColor: 'black',
+    borderWidth: 1,
+    padding: 5,
+    marginBottom: 3
+  }
+})
 
 export default GoalList;
