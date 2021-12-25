@@ -3,6 +3,11 @@ import { StyleSheet, View, TextInput, Button, Modal } from 'react-native'
 
 const GoalInput = (props) => {
   const [inputGoal, setInputGoal] = useState('')
+  const addGoalHendler = () => {
+    props.addGoalhandler(inputGoal);
+    setInputGoal('')
+  }
+
   return (
     <Modal visible= { props.visible } animationType='fade'>
       <View style={style.input}>
@@ -11,7 +16,7 @@ const GoalInput = (props) => {
         </View>
         <View style={style.button} >
           <Button title="Cancel" color='red' onPress={ () => props.setIsAddMode(false) } />
-          <Button title="Add Goal" onPress={() => props.addGoalhandler(inputGoal)} />
+          <Button title="Add Goal" onPress={addGoalHendler} />
         </View>
       </View>
     </Modal>

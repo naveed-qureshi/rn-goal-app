@@ -30,7 +30,7 @@ export default function App() {
 const style = StyleSheet.create({
   p_50: {
     flex:1,
-    padding: 50,
+    padding: 60,
     backgroundColor: 'rgb(255, 255, 255)'
   },
 
